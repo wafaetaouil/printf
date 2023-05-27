@@ -38,7 +38,8 @@ int _printf(const char *format, ...)
 		if (get_modifier(p, &params))
 			p++;
 		if (!get_specifier(p))
-			s += print_from_to(st, p, params.l_modifier || params.h_modifier ? p - 1 : 0);
+			s += print_from_to(st, p,
+					params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
 			s += get_print_func(p, a, &params);
 	}
