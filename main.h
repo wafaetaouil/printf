@@ -66,7 +66,7 @@ int print_S(va_list ap, params_t *params);
 
 char *convert(long int num, int base, int flags, params_t *params);
 int print_unsigned(va_list ap, params_t *params);
-int print_adress(va_list ap, params_t *params);
+int print_address(va_list ap, params_t *params);
 
 int (*get_specifier(char *s))(va_list ap, params_t *params);
 int get_print_func(char *s, va_list ap, params_t *params);

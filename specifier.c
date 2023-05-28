@@ -6,7 +6,7 @@
  *
  * Return: the num of bytes
  */
-int (*get_specifier(char *s))(va_list a, params_t *params)
+int (*get_specifier(char *s))(va_list ap, params_t *params)
 {
 	specifier_t specifiers[] = {
 		{"c", print_char},
@@ -19,7 +19,7 @@ int (*get_specifier(char *s))(va_list a, params_t *params)
 		{"u", print_unsigned},
 		{"x", print_hex},
 		{"X", print_HEX},
-		{"p", print_adress},
+		{"p", print_address},
 		{"S", print_S},
 		{"r", print_rev},
 		{"R", print_rot13},
@@ -29,9 +29,9 @@ int (*get_specifier(char *s))(va_list a, params_t *params)
 
 	while (specifiers[i].specifier)
 	{
-		if (*s == specifiers[i] .specifier[0])
+		if (*s == specifiers[i].specifier[0])
 		{
-			return (specifiers[i] .f);
+			return (specifiers[i].f);
 		}
 		i++;
 	}
