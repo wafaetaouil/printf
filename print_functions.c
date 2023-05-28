@@ -9,13 +9,13 @@
  */
 int print_char(va_list ap, params_t *params)
 {
-	char p_char = ' ';
+	char pad_char = ' ';
 	unsigned int pad = 1, s = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
 		s += _putchar(ch);
 	while (pad++ < params->width)
-		s += _putchar(p_char);
+		s += _putchar(pad_char);
 	if (!params->minus_flag)
 		s += _putchar(ch);
 	return (s);
@@ -53,11 +53,10 @@ int print_string(va_list ap, params_t *params)
 
 	(void)params;
 	switch ((int)(!str))
-	{
-		case 1:
-			str = NULL_STRING;
-	}
-	j = pad = _strlen(str);
+	case 1:
+		str = NULL_STRING;
+		
+		j = pad = _strlen(str);
 	if (params->precision < pad)
 		j = pad = params->precision;
 
@@ -71,7 +70,7 @@ int print_string(va_list ap, params_t *params)
 	}
 	while (j++ < params->width)
 		s += _putchar(pad_char);
-	if (params->minus_flag)
+	if (!params->minus_flag)
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
