@@ -94,17 +94,17 @@ int print_percent(va_list ap, params_t *params)
 	return (_putchar('%'));
 }
 /**
- * print_S - print string
- * @ap: pointer
+ * print_S - custom format
+ * @ap: argument pointer
  * @params: the paramters struct
  *
- * Return: number of bytes
+ * Return: number chars printed
  */
 int print_S(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *);
 	char *hex;
-	int s = 0;
+	int sum = 0;
 
 	if ((int)(!str))
 		return (_puts(NULL_STRING));
@@ -112,17 +112,17 @@ int print_S(va_list ap, params_t *params)
 	{
 		if ((*str > 0 && *str < 32) || *str >= 127)
 		{
-			s += _putchar('\\');
-			s += _putchar('X');
+			sum += _putchar('\\');
+			sum += _putchar('x');
 			hex = convert(*str, 16, 0, params);
 			if (!hex[1])
-				s += _putchar('0');
-			s += _puts(hex);
+				sum += _putchar('0');
+			sum += _puts(hex);
 		}
 		else
 		{
-			s += _putchar(*str);
+			sum += _putchar(*str);
 		}
 	}
-	return (s);
+	return (sum);
 }
