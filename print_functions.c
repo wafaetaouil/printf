@@ -81,11 +81,11 @@ int print_string(va_list ap, params_t *params)
 	return (sum);
 }
 /**
- * print_percent - print percent
+ * print_percent - print string
  * @ap: argument pointer
  * @params: parameters struct
  *
- * Return: num of bytes
+ * Return: num chars printed
  */
 int print_percent(va_list ap, params_t *params)
 {
