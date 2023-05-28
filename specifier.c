@@ -29,9 +29,9 @@ int (*get_specifier(char *s))(va_list a, params_t *params)
 
 	while (specifiers[i].specifier)
 	{
-		if (*s == specifiers[i] .specifier[0])
+		if (*s == specifiers[i].specifier[0])
 		{
-			return (specifiers[i] .f);
+			return (specifiers[i].f);
 		}
 		i++;
 	}
