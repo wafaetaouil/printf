@@ -1,11 +1,10 @@
 #include "main.h"
-#include <string.h>
 
 /**
- * _isdigit - check
+ * _isdigit - check if c is digit
  * @c: the character to check
  *
- * Return: 1 if digit , 0 other
+ * Return: 1 if digit , 0 otherwise
  */
 int _isdigit(int c)
 {
@@ -116,11 +115,7 @@ int print_number_left_shift(char *str, params_t *params)
 		str++;
 	else
 		neg = 0;
-	if ((params->plus_flag && !neg2)
-			|| (!params->plus_flag && params->space_flag && !neg2))
-		i++;
-	else
-		neg = 0;
+
 	if (params->plus_flag && !neg2 && !params->unsign)
 		n += _putchar('+'), i++;
 	else if (params->space_flag && !neg && !params->unsign)
