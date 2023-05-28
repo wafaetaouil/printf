@@ -1,31 +1,31 @@
 #include "main.h"
 
 /**
- * print_char - print chrachter
+ * print_char - print character
  * @ap: argument pointer
- * @params: the paramtr
+ * @params: the parameters struct
  *
- * Return: number of bytes
+ * Return: number chars printed
  */
 int print_char(va_list ap, params_t *params)
 {
 	char pad_char = ' ';
-	unsigned int pad = 1, s = 0, ch = va_arg(ap, int);
+	unsigned int pad = 1, sum = 0, ch = va_arg(ap, int);
 
 	if (params->minus_flag)
-		s += _putchar(ch);
+		sum += _putchar(ch);
 	while (pad++ < params->width)
-		s += _putchar(pad_char);
+		sum += _putchar(pad_char);
 	if (!params->minus_flag)
-		s += _putchar(ch);
-	return (s);
+		sum += _putchar(ch);
+	return (sum);
 }
 /**
  * print_int - print integer
  * @ap : argument pointer
- * @params: the parr
+ * @params: parameters struct
  *
- * Return: number of bytes
+ * Return: number chars printed
  */
 int print_int(va_list ap, params_t *params)
 {
@@ -42,21 +42,21 @@ int print_int(va_list ap, params_t *params)
 /**
  * print_string - print a string
  * @ap: argument pointer
- * @params: the parr
+ * @params: parameters struct
  *
- * Return: num of bytes
+ * Return: number chars printed
  */
 int print_string(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *), pad_char = ' ';
-	unsigned int pad = 0, s = 0, i = 0, j;
+	unsigned int pad = 0, sum = 0, i = 0, j;
 
 	(void)params;
 	switch ((int)(!str))
-	case 1:
-		str = NULL_STRING;
-		
-		j = pad = _strlen(str);
+		case 1:
+			str = NULL_STRING;
+
+	j = pad = _strlen(str);
 	if (params->precision < pad)
 		j = pad = params->precision;
 
@@ -64,26 +64,26 @@ int print_string(va_list ap, params_t *params)
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
-				s += _putchar(*str++);
+				sum += _putchar(*str++);
 		else
-			s += _puts(str);
+			sum += _puts(str);
 	}
 	while (j++ < params->width)
-		s += _putchar(pad_char);
+		sum += _putchar(pad_char);
 	if (!params->minus_flag)
 	{
 		if (params->precision != UINT_MAX)
 			for (i = 0; i < pad; i++)
-				s += _putchar(*str++);
+				sum += _putchar(*str++);
 		else
-			s += puts(str);
+			sum += puts(str);
 	}
-	return (s);
+	return (sum);
 }
 /**
  * print_percent - print percent
- * @ap: argument poinet
- * @params: teh parra
+ * @ap: argument pointer
+ * @params: parameters struct
  *
  * Return: num of bytes
  */
@@ -94,9 +94,9 @@ int print_percent(va_list ap, params_t *params)
 	return (_putchar('%'));
 }
 /**
- * print_S - custom format
- * @ap: point
- * @params: the paramtr
+ * print_S - print string
+ * @ap: pointer
+ * @params: the paramters struct
  *
  * Return: number of bytes
  */
