@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * _isdigit - checck
+ * _isdigit - check
  * @c: the character to check
  *
  * Return: 1 if digit , 0 other
