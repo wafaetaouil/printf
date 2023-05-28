@@ -57,7 +57,7 @@ int get_print_func(char *s, va_list ap, params_t *params)
  * @s : string
  * @params: teh parametrs
  *
- * Return: valid
+ * Return: if flag valid
  */
 int get_flag(char *s, params_t *params)
 {
