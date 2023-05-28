@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _printf - print
+ * _printf - print an
  * @format: form string
  *
  * Return: num of bytes
