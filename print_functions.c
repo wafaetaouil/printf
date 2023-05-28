@@ -21,11 +21,11 @@ int print_char(va_list ap, params_t *params)
 	return (s);
 }
 /**
- * print_int: integer
+ * print_int - print integer
  * @ap : argument pointer
  * @params: the parr
  *
- * Return : number of bytes
+ * Return: number of bytes
  */
 int print_int(va_list ap, params_t *params)
 {
@@ -82,11 +82,11 @@ int print_string(va_list ap, params_t *params)
 	return (s);
 }
 /**
- * print_percent - print
+ * print_percent - print percent
  * @ap: argument poinet
- * @params : teh parra
+ * @params: teh parra
  *
- * Return : num of bytes
+ * Return: num of bytes
  */
 int print_percent(va_list ap, params_t *params)
 {
