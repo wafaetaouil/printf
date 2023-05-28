@@ -58,13 +58,13 @@ int print_unsigned(va_list ap, params_t *params)
 }
 
 /**
- * print_adress - print
+ * print_address - print
  * @ap: argument
  * @params: parametre
  *
  * Return: bytes
  */
-int print_adress(va_list ap, params_t *params)
+int print_address(va_list ap, params_t *params)
 {
 	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;
