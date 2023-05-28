@@ -11,7 +11,7 @@ int _printf(const char *format, ...)
 	int s = 0;
 	va_list ap;
 	params_t params = PARAMS_INIT;
-	char *p, *st;
+	char *p, *start;
 
 	va_start(ap, format);
 
@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			s += _putchar(*p);
 			continue;
 		}
-		st = p;
+		start = p;
 		p++;
 		while (get_flag(p, &params))
 		{
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		if (get_modifier(p, &params))
 			p++;
 		if (!get_specifier(p))
-			s += print_from_to(st, p,
+			s += print_from_to(start, p,
 					params.l_modifier || params.h_modifier ? p - 1 : 0);
 		else
 			s += get_print_func(p, ap, &params);
