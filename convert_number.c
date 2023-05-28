@@ -30,13 +30,13 @@ int print_hex(va_list ap, params_t *params)
 	return (c += print_number(str, params));
 }
 /**
- * print_Hex - prints unsigned
+ * print_HEX - prints unsigned
  * @ap: arg of pointer
  * @params: struc
  *
  * Return: bytes
  */
-int print_Hex(va_list ap, params_t *params)
+int print_HEX(va_list ap, params_t *params)
 {
 unsigned long l;
 	int c = 0;
