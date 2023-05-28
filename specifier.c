@@ -100,7 +100,7 @@ int get_modifier(char *s, params_t *params)
 			i = params->h_modifier = 1;
 			break;
 		case 'l':
-			i =params->l_modifier = 1;
+			i = params->l_modifier = 1;
 			break;
 	}
 	return (i);
