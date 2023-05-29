@@ -9,9 +9,9 @@
 int _printf(const char *format, ...)
 {
 	int s = 0;
+	char *p, *start;
 	va_list ap;
 	params_t params = PARAMS_INIT;
-	char *p, *start;
 
 	va_start(ap, format);
 
