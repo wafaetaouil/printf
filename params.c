@@ -5,7 +5,7 @@
  * @params: parameters struct
  * @ap: the argument pointer
  *
- * Return: void
+ * Return: void success
  */
 void init_params(params_t *params, va_list ap)
 {
