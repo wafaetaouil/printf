@@ -55,9 +55,13 @@ int get_print_func(char *s, va_list ap, params_t *params)
 /**
  * get_flag - find the flag
  * @s : string
- * @params: teh parametrs
+ * @params: the parameters struct
  *
+<<<<<<< HEAD
  * Return: if flag valid
+=======
+ * Return: if flag was valid
+>>>>>>> 8b86b6d38064cb7bb54ff5feaf8b9d3488c772a8
  */
 int get_flag(char *s, params_t *params)
 {
@@ -106,10 +110,10 @@ int get_modifier(char *s, params_t *params)
 	return (i);
 }
 /**
- * get_width - get teh witdh
+ * *get_width - get the width
  * @s: the form
- * @params: the param
- * @ap: the argumen
+ * @params: the parameters struct
+ * @ap: the argument pointer
  *
  * Return: new pointer
  */

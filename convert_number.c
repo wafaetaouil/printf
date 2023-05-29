@@ -79,7 +79,7 @@ int print_binary(va_list ap, params_t *params)
 
 /**
  * print_octal - print unsigned octal numbers
- * @ap : arg
+ * @ap : arg to print
  * @params: struct
  *
  * Return: byte printed
