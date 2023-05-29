@@ -3,8 +3,7 @@
 /**
  * _printf - print an
  * @format: form string
- *
- * Return: num of bytes
+ *Return: num of bytes
  */
 int _printf(const char *format, ...)
 {
